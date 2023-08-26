@@ -20,7 +20,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', credentialsId: 'Git', url: env.SOURCE_REPO_URL
+                git branch: 'master', credentialsId: 'Git', url: env.SOURCE_REPO_URL
             }
         }
         
