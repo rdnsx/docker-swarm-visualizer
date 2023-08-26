@@ -6,7 +6,6 @@ pipeline {
         STACK_NAME = 'docker-swarm-visualizer'
 
         DOCKER_HUB_CREDENTIALS = 'DockerHub'
-        GIT_TOKEN = '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'
         TAG_NAME = 'latest'
         SSH_USER = 'root'
         SSH_HOST = '91.107.199.72'
@@ -46,7 +45,7 @@ pipeline {
                           rm -rf ${DOMAIN}/ &&
                           mkdir ${DOMAIN}/ &&
                          cd ${DOMAIN}/ &&
-                          curl -H -v "Authorization: token ${GIT_TOKEN}" -o docker-compose-swarm.yml https://raw.githubusercontent.com/rdnsx/${DOMAIN}/master/docker-compose-swarm.yml &&
+                          curl -H -v -o docker-compose-swarm.yml https://raw.githubusercontent.com/rdnsx/${DOMAIN}/master/docker-compose-swarm.yml &&
                           docker stack deploy -c docker-compose-swarm.yml dockerswarmvisualizer;'
                         """
                     }
