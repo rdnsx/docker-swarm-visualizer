@@ -1,13 +1,10 @@
-version: "3.8"
+version: '3.8'
 
 services:
   dsv:
     image: rdnsx/docker-swarm-visualizer
     deploy:
       replicas: 1
-      placement:
-        constraints:
-          - node.role == manager
     ports:
       - "8688:8080"
     volumes:
