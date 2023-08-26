@@ -46,7 +46,7 @@ pipeline {
                           rm -rf ${DOMAIN}/ &&
                           mkdir ${DOMAIN}/ &&
                          cd ${DOMAIN}/ &&
-                          curl -H "Authorization: token ${GIT_TOKEN}" -o docker-compose-swarm.yml https://raw.githubusercontent.com/rdnsx/${DOMAIN}/master/docker-compose-swarm.yml &&
+                          curl -H -v "Authorization: token ${GIT_TOKEN}" -o docker-compose-swarm.yml https://raw.githubusercontent.com/rdnsx/${DOMAIN}/master/docker-compose-swarm.yml &&
                           docker stack deploy -c docker-compose-swarm.yml dockerswarmvisualizer;'
                         """
                     }
